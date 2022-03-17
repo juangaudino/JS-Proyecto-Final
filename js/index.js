@@ -1,7 +1,7 @@
 /**
  * @author Juan Gaudino
  * @version 1.0.0
- * @description 1er. Entrega Proyecto Final JavaScript - Clase 03 - Coderhouse
+ * @description 1er. Entrega Proyecto Final JavaScript - Clase 07 - Coderhouse
  * 
  * History
  *  1.0.0 - 2022-02-23 : Juan Gaudino : Mostrar en consola si el alumno esta aprobado o no
@@ -16,6 +16,8 @@ const metroCuadradoBack = 730;
 const metrosCuadrados = (ancho, alto) => {
     return ancho * alto * cantidad;
 }
+let precio2 = 0;
+let cantidad2 = 0;
 
 
 // Declaración de funciones
@@ -46,7 +48,7 @@ calcularPrecio = (material, cantidad, metrosCuadrados) => {
 let material = solicitarMaterial();
 let material2 = confirm("Desea agregar otro material?");
 if (material2 == true) {
-    material = solicitarMaterial();
+    material2 = solicitarMaterial2();
 }
 
 
@@ -75,6 +77,31 @@ function solicitarMaterial() {
     return material;
 }
 
+function solicitarMaterial2() {
+    let material2 = prompt('Ingrese el material: PAI, CPM, Front o Back');
+    if (material2 === 'PAI' || material2 === 'CPM') {
+        cantidad2 = prompt(`Ingrese la cantidad de ${material2} a producir`);
+        console.log(`El costo de producción de ${cantidad2} ${material2} es de $${calcularPrecio(material2, cantidad2)}`);
+        alert(`El costo de producción de ${cantidad2} ${material2} es de $${calcularPrecio(material2, cantidad2)}`);
+        document.write("<h2> Cotización de "+ cantidad2 +" "+ material2 +"</h2>");
+        document.write("<h4> El costo de producción es de $" + calcularPrecio(material2, cantidad2,) + "</h4>");
+        precio2 = calcularPrecio(material2, cantidad2);
+    }
+    else if (material2 === 'Front' || material2 === 'Back') {
+        ancho = prompt(`Ingrese el ancho del material ${material2}`);	
+        alto = prompt(`Ingrese el alto del material ${material2}`);
+        cantidad2 = prompt(`Ingrese la cantidad de ${material2}`);
+        let metrosCuadrados = (ancho * alto * cantidad);
+        console.log(`Los metros cuadrados del material ${material2} son de ${metrosCuadrados}`);
+        console.log(`El costo de producción de ${cantidad2} ${material2} es de $${calcularPrecio(material2, cantidad2, metrosCuadrados)}`);
+        alert(`El costo de producción de ${cantidad2} ${material2} es de $${calcularPrecio(material2, cantidad2, metrosCuadrados)}`);
+        document.write("<h2> Cotización de "+ cantidad2 +" "+ material2 +" "+ "de " + ancho + "x" + alto + " metros" +"</h2>");
+        document.write("<h4> El costo de producción es de $" + calcularPrecio(material2, cantidad2, metrosCuadrados) + "</h4>");
+        precio2 = calcularPrecio(material2, cantidad2, metrosCuadrados);
+    }
+    return material2;
+}
+
 
 // Creación de objetos
 
@@ -83,11 +110,7 @@ class Producto {
         this.titulo = titulo;
         this.precio = precio;
         this.cantidad = cantidad;
-        // this.agregarAlCarrito = function () {
-        //     carrito.push(this);
-        // console.log(`${this.titulo} agregado al carrito`);
-        };
-// }
+    }
 }
 
 const PRODUCTO = new Producto(material, calcularPrecio, cantidad);
@@ -95,40 +118,16 @@ const PRODUCTO = new Producto(material, calcularPrecio, cantidad);
 // Array de Productos
 
 const agregarAlCarrito = (producto) => {
-    carrito.push(producto);
-};
+      carrito.push(producto);
+  };
+
 
 const carrito = [];
 const arrayProductos = [
     { id: 1, titulo: material, precio: precio, cantidad},
-    { id: 2, titulo: material, precio: precio, cantidad},
+    { id: 2, titulo: material2, precio: precio2, cantidad2},
 ];
-
-agregarAlCarrito(arrayProductos[0, 1]);
-console.log(carrito);
 
 arrayProductos.forEach(productoEnCarrito => {
     console.log(productoEnCarrito)
 });
-    
-// agregarAlCarrito(arrayProductos[0]);
-// console.log(carrito);
-
-
-// console.log("Esto devuelve el length del array: " + arrayProductos.length);
-// for (let i = 0; i < arrayProductos.length; i++) {
-//     console.log(arrayProductos[i]);
-// }
-
-// Carrito
-
-// carrito.push(agregarAlCarrito);
-// alert(`${PRODUCTO.titulo} agregado al carrito`);
-// console.log(carrito);
-
-// const indiceDelProducto = carrito.indexOf(PRODUCTO);
-// console.log(indiceDelProducto);
-
-
-
-
