@@ -128,6 +128,8 @@ const arrayProductos = [
     { id: 2, titulo: material2, precio: precio2, cantidad2},
 ];
 
-arrayProductos.forEach(productoEnCarrito => {
-    console.log(productoEnCarrito)
+arrayProductos.forEach(producto => {
+    agregarAlCarrito(producto);
 });
+
+console.log(carrito);
