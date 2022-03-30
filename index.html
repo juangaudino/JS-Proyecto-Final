@@ -35,8 +35,8 @@
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Carrito
+                            <i class="bi-calculator-fill me-1"></i>
+                            Cotizaciones recientes
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
@@ -48,7 +48,7 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
                     <h1 class="display-4 fw-bolder">Cotizador de Impresión</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Seleccione tipo de material, cantidad y medidas</p>
+                    <!-- <p class="lead fw-normal text-white-50 mb-0">Seleccione tipo de material, cantidad y medidas</p> -->
                 </div>
             </div>
         </header>
@@ -58,8 +58,19 @@
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <div class="col mb-5">
                         <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Durabilidad</div>
+                            <div class="badge text-white position-absolute" style="top: 2rem; right: 0.5rem">
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                            </div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/ppl.jpg" alt="PAI" />
+                            <img class="card-img-top" src="img/PAI.png" alt="PAI" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -71,31 +82,59 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="pai" onclick="pai()">
+                                <div class="text-center">
+                                <button type="button" class="text-center btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#paiModal">
                                     Cotizar
-                                </a></div>
+                                  </button>
+                                </div>
                             </div>
                         </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="paiModal" tabindex="-1" aria-labelledby="paiModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="paiModalLabel">Cotización de PAI</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                <!-- Formulario de cotizacion -->
+                                <form class="form-horizontal" id="paiForm">
+                                    <div class="form-group">
+                                    <label for="cantidad" class="col-form-label">Cantidad</label>
+                                    <input type="number" class="form-control" id="cantidad" placeholder="Cantidad" />
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="text-center btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#paiModal" id="pai" onclick="pai()">
+                                        Calcular
+                                      </button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <!-- Modal -->
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Descuento por Volumen</div>
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Durabilidad</div>
+                            <div class="badge text-white position-absolute" style="top: 2rem; right: 0.5rem">
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                            </div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/cpm.jpg" alt="CPM" />
+                            <img class="card-img-top" src="img/CPM.png" alt="CPM" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">CPM</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
                                     <!-- Product price-->
                                     <span class="text-muted text-decoration-line-through">$240.00</span>
                                     $200 - costo x unidad
@@ -112,9 +151,18 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Oferta</div>
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Durabilidad</div>
+                            <div class="badge text-white position-absolute" style="top: 2rem; right: 0.5rem">
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                            </div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/front.jpg" alt="FrontLight" />
+                            <img class="card-img-top" src="img/Frontlight.png" alt="FrontLight" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -135,21 +183,24 @@
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Durabilidad</div>
+                            <div class="badge text-white position-absolute" style="top: 2rem; right: 0.5rem">
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                            </div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/back.jpg" alt="BackLight" />
+                            <img class="card-img-top" src="img/Backlight.png" alt="BackLight" />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">BackLight</h5>
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                        <div class="bi-star-fill"></div>
-                                    </div>
                                     <!-- Product price-->
                                     $730 - costo x metro cuadrado
                                 </div>
@@ -157,6 +208,72 @@
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="back" onclick="back()">
+                                    Cotizar
+                                </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Nuevos Productos (aun sin funcion) -->
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Durabilidad</div>
+                            <div class="badge text-white position-absolute" style="top: 2rem; right: 0.5rem">
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                            </div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="img/Vinilo.png" alt="Vinilo" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Vinilo</h5>
+                                    <!-- Product price-->
+                                    $600 - costo x metro cuadrado
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="back" onclick="vinilo()">
+                                    Cotizar
+                                </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Sale badge-->
+                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Durabilidad</div>
+                            <div class="badge text-white position-absolute" style="top: 2rem; right: 0.5rem">
+                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                    <div class="bi-star-fill"></div>
+                                </div>
+                            </div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="img/Sextuple.png" alt="Sextuples" />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Sextuples</h5>
+                                    <!-- Product price-->
+                                    <span class="text-muted text-decoration-line-through">$440.00</span>
+                                    $400 - costo x unidad
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="back" onclick="sextuples()">
                                     Cotizar
                                 </a></div>
                             </div>
@@ -173,5 +290,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/index.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 </html>

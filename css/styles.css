@@ -110,6 +110,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 
 h1, .h1 {
   font-size: calc(1.375rem + 1.5vw);
+  text-shadow: 2px 5px 6px black;
 }
 @media (min-width: 1200px) {
   h1, .h1 {
@@ -7737,6 +7738,7 @@ textarea.form-control-lg {
 .text-warning {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-warning-rgb), var(--bs-text-opacity)) !important;
+  text-shadow: 2px 2px 5px black;
 }
 
 .text-danger {
@@ -7889,7 +7891,7 @@ textarea.form-control-lg {
   /* background: #0f0c29;
   background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
   background: linear-gradient(to right, #24243e, #302b63, #0f0c29); */
-  background-image: url(/img/asasasasa.jpg);
+  background-image: url(/img/jason-leung-U_bfOptsrUk-unsplash.jpg);
   background-size: cover;
 }
 

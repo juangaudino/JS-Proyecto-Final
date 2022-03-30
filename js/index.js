@@ -48,7 +48,7 @@ calcularPrecio = (material, cantidad, metrosCuadrados) => {
 
 function pai() {
         let material = "PAI";
-        cantidad = prompt(`Ingrese la cantidad de PPL a producir`);
+        cantidad = getElementById(`cantidad`).value;
         console.log(`El costo de producción de ${cantidad} PPL es de $${calcularPrecio(material, cantidad)}`);
         document.getElementById("pai").innerHTML = `El costo de producción de ${cantidad} PPL es de $${calcularPrecio(material, cantidad)}. <br> Click para cotizar de nuevo <br>`;
         // document.write("<h2> Cotización de "+ cantidad +" "+ material +"</h2>");
@@ -129,4 +129,6 @@ arrayProductos.forEach(producto => {
 });
 
 console.log(carrito);
+
+
 
