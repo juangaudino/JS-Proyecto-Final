@@ -26,16 +26,11 @@ const totalPapel = (demasiaCalculada, motivos) => {
     return (demasiaCalculada * motivos * cantidad);
 }
 
-// const cantidadConExtras = (cantidad, extras) => {
-//     return cantidad + extras;
-// }
-
 let material = "";
 let cantidad = 0;
 let precio = 0;
 
 // Declaración de funciones
-
 
 calcularPrecio = (material, totalPapel, metrosCuadrados) => {
     let precio = 0;
@@ -60,19 +55,6 @@ calcularPrecio = (material, totalPapel, metrosCuadrados) => {
     }
     return precio;
 }
-
-// document.addEventListener("DOMContentLoaded", function() {
-//     let formulario = document.getElementById("formul");
-//     formulario.addEventListener("submit", function() {
-//         formulario.reset();
-//     });
-// });
-
-// var input = document.getElementsByClassName("enterPAI");
-// input.addEventListener("keyup", function(event) {
-//     event.preventDefault();
-// });
-
 
 //Funciones por producto
 
@@ -172,20 +154,21 @@ function sextuple() {
     return material;
 }
 
-
 // Creación de objetos
 
 class Producto {
     constructor(titulo, precio, cantidad) {
         this.titulo = titulo;
+        console.log(this.titulo);
         this.precio = precio;
+        console.log(this.precio);
         this.cantidad = cantidad;
+        console.log(this.cantidad);
     }
 }
 
 const PRODUCTO = new Producto(material, calcularPrecio, cantidad);
-
-
+console.log(PRODUCTO);
 
 const agregarAlCarrito = (producto) => {
       carrito.push(producto);
@@ -203,6 +186,18 @@ arrayProductos.forEach(producto => {
 });
 
 console.log(carrito);
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     let formulario = document.getElementById("formul");
+//     formulario.addEventListener("submit", function() {
+//         formulario.reset();
+//     });
+// });
+
+// var input = document.getElementsByClassName("enterPAI");
+// input.addEventListener("keyup", function(event) {
+//     event.preventDefault();
+// });
 
 
 
