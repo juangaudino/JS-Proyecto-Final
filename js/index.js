@@ -19,9 +19,16 @@ const metroCuadradoVinilo = 300;
 const metrosCuadrados = (ancho, alto) => {
     return ancho * alto * cantidad;
 }
-const extras = (demasia) => {
-    return (demasia/100) * cantidad;
+const demasiaCalculada = (demasia) => {
+    return (demasia/100) +1;
 }
+const totalPapel = (demasiaCalculada, motivos) => {
+    return (demasiaCalculada * motivos * cantidad);
+}
+
+// const cantidadConExtras = (cantidad, extras) => {
+//     return cantidad + extras;
+// }
 
 let material = "";
 let cantidad = 0;
@@ -30,14 +37,14 @@ let precio = 0;
 // Declaración de funciones
 
 
-calcularPrecio = (material, extras, metrosCuadrados) => {
+calcularPrecio = (material, totalPapel, metrosCuadrados) => {
     let precio = 0;
     switch (material) {
         case 'PAI':
-            precio = (cantidad + extras) * unitarioPAI;
+            precio = totalPapel * unitarioPAI;
             break;
         case 'CPM':
-            precio = extras * unitarioCPM;
+            precio = totalPapel * unitarioCPM;
             break;
         case 'Front':
             precio = metrosCuadrados * metroCuadradoFront;
@@ -49,7 +56,7 @@ calcularPrecio = (material, extras, metrosCuadrados) => {
             precio = metrosCuadrados * metroCuadradoVinilo;
             break;
         case 'Sextuple':
-            precio = extras * unitarioSextuple;
+            precio = totalPapel * unitarioSextuple;
     }
     return precio;
 }
@@ -72,26 +79,40 @@ calcularPrecio = (material, extras, metrosCuadrados) => {
 function pai() {
         let material = "PAI";
         let cantidad = document.getElementById("cantidadPAI").value;
+        console.log(`La cantidad de PAI es de ${cantidad}`);
+        let motivos = document.getElementById("motivosPAI").value;
+        console.log(`La cantidad de motivos es de ${motivos}`);
         let demasia = document.getElementById("demasiaPAI").value;
-        console.log(`Demasia es ${demasia}`);
-        let extras = (demasia/100 * cantidad);
-        console.log(`La cantidad del material PAI es de ${extras+cantidad}`);
-        console.log(`El costo de producción de ${cantidad} PPL es de $${calcularPrecio(material, cantidad, extras)}`);
-        document.getElementById("pai").innerHTML = `El costo de producción de ${cantidad} PPL es de $${calcularPrecio(material, cantidad, extras)}. <br> Click para cotizar de nuevo <br>`;
+        console.log(`La demasia es de ${demasia}%`);
+        let demasiaCalculada = (demasia/100) +1;
+        console.log(`La demasia calculada es de ${demasiaCalculada}`);
+        let totalPapel = (demasiaCalculada * motivos * cantidad);
+        console.log(`El total de papel es de ${totalPapel}`);
+        console.log(`El costo de producción de ${totalPapel} PPL es de $${calcularPrecio(material, totalPapel)}`);
+        document.getElementById("pai").innerHTML = `El costo de producción de ${totalPapel} PPL es de $${calcularPrecio(material, totalPapel)}. <br> Click para cotizar de nuevo <br>`;
         // document.write("<h2> Cotización de "+ cantidad +" "+ material +"</h2>");
         // document.write("<h4> El costo de producción es de $" + calcularPrecio(material, cantidad,) + "</h4>");
-        precio = calcularPrecio(material, cantidad, extras);
+        precio = calcularPrecio(material, totalPapel);
         return material;
 }
 
 function cpm() {
         let material = "CPM";
         let cantidad = document.getElementById("cantidadCPM").value;
-        console.log(`El costo de producción de ${cantidad} CPM es de $${calcularPrecio(material, cantidad)}`);
-        document.getElementById("cpm").innerHTML = `El costo de producción de ${cantidad} CPM es de $${calcularPrecio(material, cantidad)}. <br> Click para cotizar de nuevo <br>`;
+        console.log(`La cantidad de CPM es de ${cantidad}`);
+        let motivos = document.getElementById("motivosCPM").value;
+        console.log(`La cantidad de motivos es de ${motivos}`);
+        let demasia = document.getElementById("demasiaCPM").value;
+        console.log(`La demasia es de ${demasia}%`);
+        let demasiaCalculada = (demasia/100) +1;
+        console.log(`La demasia calculada es de ${demasiaCalculada}`);
+        let totalPapel = (demasiaCalculada * motivos * cantidad);
+        console.log(`El total de papel es de ${totalPapel}`);
+        console.log(`El costo de producción de ${totalPapel} CPM es de $${calcularPrecio(material, totalPapel)}`);
+        document.getElementById("cpm").innerHTML = `El costo de producción de ${totalPapel} CPM es de $${calcularPrecio(material, totalPapel)}. <br> Click para cotizar de nuevo <br>`;
         // document.write("<h2> Cotización de "+ cantidad +" "+ material +"</h2>");
         // document.write("<h4> El costo de producción es de $" + calcularPrecio(material, cantidad,) + "</h4>");
-        precio = calcularPrecio(material, cantidad);
+        precio = calcularPrecio(material, totalPapel);
         return material;
 }
 
