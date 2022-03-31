@@ -77,43 +77,29 @@
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">PAI</h5>
                                     <!-- Product price-->
-                                    $1.200 - costo x unidad
+                                    $1200 - costo x unidad
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center">
-                                <button type="button" class="text-center btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#paiModal">
-                                    Cotizar
-                                  </button>
+                            <form class="form-horizontal" id="formul">
+                                <div class="form-group">
+                                <input type="number" class="form-control" id="cantidadPAI" placeholder="Cantidad"/>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="paiModal" tabindex="-1" aria-labelledby="paiModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="paiModalLabel">Cotización de PAI</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <!-- Formulario de cotizacion -->
-                                <form class="form-horizontal" id="paiForm">
+                                <form class="form-horizontal">
                                     <div class="form-group">
-                                    <label for="cantidad" class="col-form-label">Cantidad</label>
-                                    <input type="number" class="form-control" id="cantidad" placeholder="Cantidad" />
-                                    </div>
+                                    <input type="number" class="form-control" id="motivosPAI" placeholder="Cantidad de Motivos"/>
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="text-center btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#paiModal" id="pai" onclick="pai()">
-                                        Calcular
-                                      </button>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                    <input type="number" class="form-control" id="demasiaPAI" placeholder="% de Demasia"/>
                                 </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="pai" onclick="pai()">
+                                    Cotizar
+                                </a></div>
                             </div>
-                            </div>
+                        
                         </div>
-                        <!-- Modal -->
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
@@ -141,6 +127,18 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
+                            <form class="form-horizontal" id="formul">
+                                <div class="form-group">
+                                <input type="number" class="form-control" id="cantidadCPM" placeholder="Cantidad"/>
+                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                    <input type="number" class="form-control" id="motivosCPM" placeholder="Cantidad de Motivos"/>
+                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                    <input type="number" class="form-control" id="demasiaCPM" placeholder="% de Demasia"/>
+                                </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="cpm" onclick="cpm()">
                                     Cotizar
@@ -174,6 +172,18 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
+                            <form class="form-horizontal" id="formul">
+                                <div class="form-group">
+                                <input type="number" class="form-control" id="cantidadFront" placeholder="Cantidad"/>
+                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                    <input type="number" class="form-control" id="anchoFront" placeholder="Ancho en Metros"/>
+                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                    <input type="number" class="form-control" id="altoFront" placeholder="Alto en Metros"/>
+                                </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="front" onclick="front()">
                                     Cotizar
@@ -206,6 +216,18 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
+                            <form class="form-horizontal" id="formul">
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="cantidadBack" placeholder="Cantidad"/>
+                                    </div>
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                        <input type="number" class="form-control" id="anchoBack" placeholder="Ancho en Metros"/>
+                                    </div>
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                        <input type="number" class="form-control" id="altoBack" placeholder="Alto en Metros"/>
+                                    </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="back" onclick="back()">
                                     Cotizar
@@ -238,14 +260,26 @@
                                     $600 - costo x metro cuadrado
                                 </div>
                             </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="back" onclick="vinilo()">
-                                    Cotizar
-                                </a></div>
-                            </div>
+                           <!-- Product actions-->
+                           <form class="form-horizontal" id="formul">
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="cantidadVinilo" placeholder="Cantidad"/>
+                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                    <input type="number" class="form-control" id="anchoVinilo" placeholder="Ancho en Metros"/>
+                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                    <input type="number" class="form-control" id="altoVinilo" placeholder="Alto en Metros"/>
+                                </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="vinilo" onclick="vinilo()">
+                                Cotizar
+                            </a></div>
                         </div>
                     </div>
+                </div>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
@@ -272,8 +306,20 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
+                            <form class="form-horizontal" id="formul">
+                                <div class="form-group">
+                                <input type="number" class="form-control" id="cantidadSextuple" placeholder="Cantidad"/>
+                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                    <input type="number" class="form-control" id="motivosSextuple" placeholder="Cantidad de Motivos"/>
+                                </div>
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                    <input type="number" class="form-control" id="demasiaSextuple" placeholder="% de Demasia"/>
+                                </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="back" onclick="sextuples()">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="sextuple" onclick="sextuple()">
                                     Cotizar
                                 </a></div>
                             </div>
