@@ -11294,3 +11294,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+.swal-overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+}
