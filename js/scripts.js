@@ -13,7 +13,7 @@ const monedaResultado = document.getElementById('moneda_calculada');
 const cantidadInicial = document.getElementById('cantidad_calcular');
 const cantidadResultado = document.getElementById('cantidad_calculada');
 const cambioEl = document.getElementById('cambio');
-const tazaEl = document.getElementById('taza');
+const tasaEl = document.getElementById('tasa');
 
 
 // Fetch Exchange Rate and Update the DOM
@@ -24,11 +24,11 @@ function calculate(){
    fetch(`https://api.exchangerate-api.com/v4/latest/${moneda_inicial}`)
    .then(res => res.json() )
    .then(data => {
-       const taza = data.rates[moneda_resultado];
+       const tasa = data.rates[moneda_resultado];
        
-       cambioEl.innerText = `1 ${moneda_inicial} = ${taza} ${moneda_resultado}`;
+       cambioEl.innerText = `1 ${moneda_inicial} = ${tasa} ${moneda_resultado}`;
 
-       cantidadResultado.value = (cantidadInicial.value * taza).toFixed(2);
+       cantidadResultado.value = (cantidadInicial.value * tasa).toFixed(2);
 
     } );
     
@@ -40,7 +40,7 @@ cantidadInicial.addEventListener('input', calculate);
 monedaResultado.addEventListener('change', calculate);
 cantidadResultado.addEventListener('input', calculate);
 
-taza.addEventListener('click', () =>{
+tasa.addEventListener('click', () =>{
     const temp = monedaInicial.value;
     monedaInicial.value = monedaResultado.value;
     monedaResultado.value = temp;
