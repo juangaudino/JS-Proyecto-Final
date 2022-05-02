@@ -8,7 +8,7 @@ const arrayProductosOferta = [
         precioFull: 120000,
         cantidad: 100,
         material: "PAI",
-        imagen: "/img/PAI.png",
+        imagen: "/img/pai.png",
     },
     { id: 2,
         titulo: "CPM",
