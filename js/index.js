@@ -36,22 +36,22 @@ let precio = 0;
 calcularPrecio = (material, totalPapel, metrosCuadrados) => {
     let precio = 0;
     switch (material) {
-        case 'PAI':
+        case 'pai':
             precio = totalPapel * unitarioPAI;
             break;
-        case 'CPM':
+        case 'cpm':
             precio = totalPapel * unitarioCPM;
             break;
-        case 'Front':
+        case 'front':
             precio = metrosCuadrados * metroCuadradoFront;
             break;
-        case 'Back':
+        case 'back':
             precio = metrosCuadrados * metroCuadradoBack;
             break;
-        case 'Vinilo':
+        case 'vinilo':
             precio = metrosCuadrados * metroCuadradoVinilo;
             break;
-        case 'Sextuple':
+        case 'sextuple':
             precio = totalPapel * unitarioSextuple;
     }
     return precio;
@@ -63,7 +63,7 @@ calcularPrecio = (material, totalPapel, metrosCuadrados) => {
 //Funciones por producto
 
 pai = () => {
-        let material = "PAI";
+        let material = "pai";
         let cantidad = document.getElementById("cantidadPAI").value;
         console.log(`La cantidad de PAI es de ${cantidad}`);
         let motivos = document.getElementById("motivosPAI").value;
@@ -100,7 +100,7 @@ pai = () => {
 }
 
 cpm = () => {
-        let material = "CPM";
+        let material = "cpm";
         let cantidad = document.getElementById("cantidadCPM").value;
         console.log(`La cantidad de CPM es de ${cantidad}`);
         let motivos = document.getElementById("motivosCPM").value;
@@ -138,7 +138,7 @@ cpm = () => {
 }
 
 front = () => {
-        let material = "Front";
+        let material = "front";
         let cantidad = document.getElementById("cantidadFront").value;
         let ancho = document.getElementById("anchoFront").value;
         let alto = document.getElementById("altoFront").value;
@@ -171,7 +171,7 @@ front = () => {
 }
 
 back = () => {
-        let material = "Back";
+        let material = "back";
         let cantidad = document.getElementById("cantidadBack").value;
         let ancho = document.getElementById("anchoBack").value;
         let alto = document.getElementById("altoBack").value;
@@ -204,7 +204,7 @@ back = () => {
 }
 
 vinilo = () => {
-    let material = "Vinilo";
+    let material = "vinilo";
     let cantidad = document.getElementById("cantidadVinilo").value;
     let ancho = document.getElementById("anchoVinilo").value;
     let alto = document.getElementById("altoVinilo").value;
@@ -237,7 +237,7 @@ vinilo = () => {
 }
 
 sextuple = () => {
-    let material = "Sextuple";
+    let material = "sextuple";
     let cantidad = document.getElementById("cantidadSextuple").value;
     console.log(`La cantidad de CPM es de ${cantidad}`);
     let motivos = document.getElementById("motivosSextuple").value;
